@@ -9,6 +9,7 @@ SQL is and acronym for Structured Query Language, it is a standard language for 
 
 #### SQL Examples for CRUD
 
+
 * CREATE
 
 ``` CREATE ``` Creates a Table in a database.
@@ -16,24 +17,28 @@ SQL is and acronym for Structured Query Language, it is a standard language for 
 
 > ``` INSERT INTO students ( Rob , Mike); ```
 
+---------
+
 * READ
+
 ``` SELECT ``` Retrieves data from a database using arguments passed to it.
 
->```SELECT * FROM students;
+>```SELECT * FROM students; ```
 
->```
+```
 id | name
 ----+------
  1 | Rob
 (1 row)
 ```
-
+---------
 * UPDATE
 
 ``` UPDATE ``` Updates a table record/s using arguments passed to it.
 
 > ```UPDATE students SET name = 'Rob' WHERE id = 1;```
 
+-------------
 
 * DELETE
 
