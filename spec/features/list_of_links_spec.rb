@@ -1,4 +1,7 @@
-feature 'Viewing links' do
+require 'spec_helper'
+require './app/models/link.rb'
+
+feature 'Viewing links', :type => :feature do
 
   scenario 'I can see existing links on the link page' do
     Link.create(url: 'http://www.catgifpage.com', title: 'Cat gif page')
