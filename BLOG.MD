@@ -1,11 +1,13 @@
-#### What is CRUD?
+### What is CRUD?
 
 CRUD is an acronym for Create Read Update Delete, it is the four basic functions / operations for interacting with a database.
 
-#### What is SQL?
+### What is SQL?
 
 SQL is and acronym for Structured Query Language, it is a standard language for database management systems.
 
+
+#### CRUD
 
 * CREATE
 
