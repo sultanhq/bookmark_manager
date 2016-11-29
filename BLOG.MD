@@ -7,7 +7,7 @@ CRUD is an acronym for Create Read Update Delete, it is the four basic functions
 SQL is and acronym for Structured Query Language, it is a standard language for database management systems.
 
 
-#### CRUD
+#### SQL Examples for CRUD
 
 * CREATE
 
