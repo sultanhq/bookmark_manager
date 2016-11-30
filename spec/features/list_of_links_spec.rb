@@ -2,9 +2,10 @@ require './app/app'
 
 RSpec.feature "Viewing links", :type => :feature do
   scenario "shows a list of links on the homepage" do
+    DatabaseCleaner.clean
     Link.create(
-    title: 'Google search engine'
     url: 'http://www.google.co.uk',
+    title: 'Google search engine'
     )
     visit '/links'
     expect(page.status_code).to eq 200
