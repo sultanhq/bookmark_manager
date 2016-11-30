@@ -1,4 +1,5 @@
 ENV['RACK_ENV'] ||= 'development'
+config.assets.initialize_on_precompile = false
 require 'sinatra/base'
 require './app/models/link'
 
