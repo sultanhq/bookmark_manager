@@ -5,6 +5,12 @@
     <li>
       Title: <%= link.title %>
       URL: <%= link.url %>
-    </li>
+      <ul id='tags'> Tag: <% link.tags.each do |tag| %>
+        <li>
+          <%= tag %>
+        </li>
+      <% end %>
+    </ul>
+  </li>
   <% end %>
 </ul>
