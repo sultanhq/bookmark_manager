@@ -1,14 +1,18 @@
 require './app/app.rb'
 
 feature "Adding a tag to a link" do
+
   scenario "User fills in a tag field" do
+    
     visit '/links/new'
     fill_in "title", with: "Youtube"
     fill_in "url", with: "youtube.com"
     fill_in "tag", with: "videos"
     click_button('Submit')
-    within 'ul#tags' do
-      expect(page).to have_content("videos")
-    end
+
+    link = Link.first
+    expect(link.tags.map(&:name)).to include('videos')
+
   end
+
 end
