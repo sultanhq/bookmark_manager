@@ -7,7 +7,6 @@ feature "Adding a tag to a link" do
     fill_in "url", with: "youtube.com"
     fill_in "tag", with: "videos"
     click_button('Submit')
-    save_and_open_page
     within 'ul#tags' do
       expect(page).to have_content("videos")
     end
