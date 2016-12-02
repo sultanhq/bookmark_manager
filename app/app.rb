@@ -5,14 +5,23 @@ require_relative 'data_mapper_setup'
 class Bookmark_manager < Sinatra::Base
 
   enable :sessions
+  set :session_secret, 'super secret'
+
+  helpers do
+    def current_user
+    @current_user ||= User.get(session[:user_id])
+    end
+  end
 
   get '/links/new' do
+    current_user
     erb(:'links/new')
   end
 
   get '/links' do
-    @user = session['email']
     @links = Link.all
+    current_user
+
     erb(:'links/links')
   end
 
@@ -28,6 +37,7 @@ class Bookmark_manager < Sinatra::Base
   end
 
   get '/tags/:name' do
+    current_user
     tag = Tag.first(name: params[:name])
     @links = tag ? tag.links : []
     erb :'links/links'
@@ -38,10 +48,10 @@ class Bookmark_manager < Sinatra::Base
   end
 
   post '/signup' do
-    p params
-    session['email'] = params[:email]
+    user = User.create(email: params[:email],password: params[:password])
+    session[:user_id] = user.id
+    # require'pry';binding.pry
     redirect'/links'
-
   end
 
 

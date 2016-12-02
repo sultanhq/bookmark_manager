@@ -10,15 +10,9 @@ feature 'Signing up to the bookmark manager' do
     # Checks that the user's email address is displayed as part of the welcome message.
     # Checks that the User count increases by 1.
 
-visit '/signup'
-    expect(page.status_code).to eq 200
-    email = "bob@bob.com"
-    fill_in "email", with: email
-    fill_in "password", with: "Password"
-    click_button('Sign up')
-    expect(current_path).to eq('/links')
-    expect(page).to have_content("Welcome #{email}")
-    expect{User.save}.to change{User.all.count}.by(1)
+    expect{ sign_up }.to change(User, :count).by(1)
+    expect(page).to have_content("Welcome, bob@bob.com")
+    expect(User.first.email).to eq("bob@bob.com")
   end
 
 end

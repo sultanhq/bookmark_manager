@@ -3,7 +3,7 @@ require './app/app.rb'
 feature "Adding a tag to a link" do
 
   scenario "User fills in a tag field" do
-    
+    sign_up
     visit '/links/new'
     fill_in "title", with: "Youtube"
     fill_in "url", with: "youtube.com"
