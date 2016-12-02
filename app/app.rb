@@ -22,9 +22,9 @@ class Bookmark_manager < Sinatra::Base
   end
 
   get '/tags/:name' do
-  tag = Tag.first(name: params[:name])
-  @links = tag ? tag.links : []
-  erb :'links/links'
+    tag = Tag.first(name: params[:name])
+    @links = tag ? tag.links : []
+    erb :'links/links'
   end
 
   # start the server if ruby file executed directly

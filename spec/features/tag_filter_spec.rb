@@ -3,10 +3,10 @@ require './app/app'
 feature 'filtering links by tags' do
 
   before(:each) do
-    Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy', tags: [Tag.first_or_create(name: 'education')])
-    Link.create(url: 'http://www.google.com', title: 'Google', tags: [Tag.first_or_create(name: 'search')])
-    Link.create(url: 'http://www.zombo.com', title: 'This is Zombocom', tags: [Tag.first_or_create(name: 'bubbles')])
-    Link.create(url: 'http://www.bubble-bobble.com', title: 'Bubble Bobble', tags: [Tag.first_or_create(name: 'bubbles')])
+    Link.create(title: 'Makers Academy', url: 'http://www.makersacademy.com',  tags: [Tag.first_or_create(name: 'education')])
+    Link.create(title: 'Google', url: 'http://www.google.com',  tags: [Tag.first_or_create(name: 'search')])
+    Link.create(title: 'This is Zombocom', url: 'http://www.zombo.com',  tags: [Tag.first_or_create(name: 'bubbles')])
+    Link.create(title: 'Bubble Bobble', url: 'http://www.bubble-bobble.com',  tags: [Tag.first_or_create(name: 'bubbles')])
   end
 
   scenario 'I can filter links by tag' do
